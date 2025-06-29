@@ -1,0 +1,22 @@
+CREATE OR REPLACE PROCEDURE UpdateEmployeeBonus (
+	dept IN VARCHAR2,
+	bonus IN NUMBER
+) IS
+BEGIN
+	FOR RECORD IN (
+		SELECT EMPLOYEEID FROM EMPLOYEES
+		WHERE DEPARTMENT = dept
+		FOR UPDATE
+	) LOOP
+		UPDATE EMPLOYEES
+		SET SALARY = SALARY + SALARY * (bonus/100)
+		WHERE EMPLOYEEID = RECORD.EMPLOYEEID;
+	END LOOP;
+
+	DBMS_OUTPUT.PUT_LINE('Bonus added to ' || dept || ' Employees!');
+END;
+/
+
+BEGIN
+	UpdateEmployeeBonus(dept => 'IT', bonus => 10);
+END;
