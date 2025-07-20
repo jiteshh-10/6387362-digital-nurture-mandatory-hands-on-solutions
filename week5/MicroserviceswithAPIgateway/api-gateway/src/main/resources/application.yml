@@ -1,0 +1,37 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: api-gateway
+
+  # ❶ Eureka client config must be under spring:
+  cloud:
+    discovery:
+      client:
+        service-url:
+          defaultZone: http://localhost:8761/eureka
+
+    gateway:
+      # ❷ Static route definitions
+      routes:
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account-service/**
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan-service/**
+
+      # ❸ Dynamic discovery locator (optional backup)
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
