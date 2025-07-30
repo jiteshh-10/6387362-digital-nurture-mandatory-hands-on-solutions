@@ -1,0 +1,26 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8faff;
+  margin: 0;
+  padding: 20px;
+}
+
+.cohort-card {
+  background-color: #fff;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.cohort-card h3 {
+  color: #0078D4;
+  margin-bottom: 15px;
+}
+
+.cohort-card p {
+  margin: 5px 0;
+  color: #333;
+}
