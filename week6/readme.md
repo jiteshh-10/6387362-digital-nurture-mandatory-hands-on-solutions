@@ -14,8 +14,6 @@ This folder contains ReactJS projects developed during Week 6 hands-on sessions.
 | trainersapp               | Displays trainer info using props and mapping techniques.                   |
 | shoppingapp               | Simulates a basic cart UI using state and props.                            |
 | counterapp                | Implements a counter with increment/decrement/reset logic.                  |
-| cricketapp                | Tracks cricket match stats with conditional rendering.                      |
-| officespacerentalapp      | Rental listings app with UI layout and dynamic filtering (basic demo).      |
 
 ## 🛠️ Technologies Used
 - ReactJS (Hooks, JSX, Props)
